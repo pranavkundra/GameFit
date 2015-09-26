@@ -35,13 +35,13 @@ app.set('port', process.env.PORT || 3000);
 app.set('httpsport', process.env.PORT || 4433);
 
 // Bootstrap passport config
-require('./config/passport')(passport);
+// require('./config/passport')(passport);
 
 // Bootstrap application settings
-require('./config/express')(app, passport);
+// require('./config/express')(app, passport);
 
 // Bootstrap routes
-require('./config/routes')(app, passport);
+// require('./config/routes')(app, passport);
 
 // app.use(function(req, res, next) {
 //   if (/api/i.test(req.path)) req.session.returnTo = req.path;
@@ -52,14 +52,14 @@ require('./config/routes')(app, passport);
  * Error Handler.
  */
 app.use(errorhandler());
-// var env = process.env.NODE_ENV || 'Development';
-// if (env == 'Development'){
-//   app.use(errorhandler({ dumpExceptions : true, showStack : true}));
-// };
+var env = process.env.NODE_ENV || 'Development';
+if (env == 'Development'){
+  app.use(errorhandler({ dumpExceptions : true, showStack : true}));
+};
 
-// if (env == 'test'){
-//   app.use(errorhandler({ dumpExceptions : true, showStack : true}));
-// };
+if (env == 'test'){
+  app.use(errorhandler({ dumpExceptions : true, showStack : true}));
+};
 
 var server = null
 var httpsServer = null
@@ -77,13 +77,13 @@ require('./core/bootstrap').isEnvSane(server,function(err, port){
   else
   {
     console.log("In Else of Bootstrap.coffee");
-    server.listen((port), function(){
+    server.listen((port), function(d,s){
       console.log("GameFir v"+pj.version+" listening on port %d in %s mode", port, app.settings.env);
       //console.log("Server's UID is now " + process.getuid());
     });
 
     httpsServer.listen((4433), function(){
-      console.log("GameFit Server v"+pj.version+" listening on port %d in %s mode");
+      console.log("GameFit Server v"+pj.version+" listening on port %d in %s mode",port, app.settings.env);
     });
 
   }

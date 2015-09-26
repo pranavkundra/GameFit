@@ -1,0 +1,7 @@
+node_modules
+node_modules/*
+config/log
+config/log/*
+
+Hello.txt
+
