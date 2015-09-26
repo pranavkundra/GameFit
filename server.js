@@ -65,7 +65,7 @@ var server = null
 var httpsServer = null
 
 server = require('http').createServer(app);
-httpsServer = https.createServer(app);
+// httpsServer = https.createServer(app);
 
 pj = require('./package.json');
 
@@ -82,9 +82,9 @@ require('./core/bootstrap').isEnvSane(server,function(err, port){
       //console.log("Server's UID is now " + process.getuid());
     });
 
-    httpsServer.listen((4433), function(){
-      console.log("GameFit Server v"+pj.version+" listening on port %d in %s mode",port, app.settings.env);
-    });
+    // httpsServer.listen((4433), function(){
+    //   console.log("GameFit Server v"+pj.version+" listening on port %d in %s mode",port, app.settings.env);
+    // });
 
   }
 });

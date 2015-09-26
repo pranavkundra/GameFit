@@ -17,6 +17,9 @@ exports.getPowers = function(req,res){
 	// var returnjson = {x:"p", y:"q"};
 	Power.find({})
 		 .exec( function (error,result){
+		 	if(error){
+		 		console.log('Encountered Error');
+		 	}
 		 	setHeaders(res);
 		 	console.log("Sending a Sample Response");
 		 	res.send(result);
