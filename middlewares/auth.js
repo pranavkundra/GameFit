@@ -74,7 +74,7 @@ exports.isAuthenticated = function(e, n, s) {
         }, function(o, r) {
             if (o) e.flash("error", {
                 msg: "Session Expired. Please login again to continue"
-            }), n.redirect("/vendor/login");
+            }), n.redirect("/admin/login");
             else {
                 if (null != r && void 0 != r) {
                     console.log("Found Admin"), e.user = r; {
@@ -84,7 +84,7 @@ exports.isAuthenticated = function(e, n, s) {
                 }
                 e.flash("error", {
                     msg: "Session Expired. Please login again to continue"
-                }), n.redirect("/vendor/login")
+                }), n.redirect("/admin/login")
             }
         })
     } catch (i) {

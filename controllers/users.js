@@ -3,6 +3,7 @@ var _ = require('lodash');
 var async = require('async');
 var moment = require('moment');
 var timezone = require('moment-timezone');
+var Power = require('../models/Powers');
 
 function setHeaders(res){
 	res.setHeader('Access-Control-Allow-Origin', "*");
@@ -12,9 +13,16 @@ function setHeaders(res){
 
 /*Chinmay R :
 */
-exports.getUsers = function(req,res){
-	var returnjson = {x:"p", y:"q"};
-	setHeaders(res);
-	console.log("Sending a Sample Response");
-	res.send(returnjson);
+exports.getPowers = function(req,res){
+	// var returnjson = {x:"p", y:"q"};
+	Power.find({})
+		 .exec( function (error,result){
+		 	setHeaders(res);
+		 	console.log("Sending a Sample Response");
+		 	res.send(result);
+		 });
+
+	// setHeaders(res);
+	
+	// res.send(returnjson);
 };
