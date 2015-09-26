@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var battleList = ["Antman", "Rainbow Boy", "Cloud man"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +21,18 @@ class SecondViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return battleList.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("BattleCell", forIndexPath: indexPath)
+        
+        cell.textLabel?.text = battleList[indexPath.row]
+        
+        return cell
+    }
 }
 
