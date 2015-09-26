@@ -41,7 +41,7 @@ app.set('httpsport', process.env.PORT || 4433);
 // require('./config/express')(app, passport);
 
 // Bootstrap routes
-// require('./config/routes')(app, passport);
+require('./config/routes')(app);
 
 // app.use(function(req, res, next) {
 //   if (/api/i.test(req.path)) req.session.returnTo = req.path;
