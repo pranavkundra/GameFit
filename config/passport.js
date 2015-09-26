@@ -1,4 +1,4 @@
-var _ = require("lodash"),
+/*var _ = require("lodash"),
     passport = require("passport"),
     localUser = require("./passport/localUser"),
     User = require("../models/User");
@@ -12,4 +12,4 @@ module.exports = function(e) {
             })
         })
     }), e.use("user-login", localUser)
-}
+}*/

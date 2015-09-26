@@ -3,7 +3,9 @@
  */
 
 var express = require('express');
-var fs = require('fs');
+// var fs = require('fs');
+var bodyParser = require('body-parser');
+
 /*Compression Middleware DFlate and Gzip - 
 Serving HTML/CSS/JS {Client Side} Assets*/
 var compress = require('compression');
@@ -11,18 +13,17 @@ var compress = require('compression');
 /* Express Session*/
 var session = require('express-session');
 
-var bodyParser = require('body-parser');
 
 /*Lusca - Web Application Security 
   Dependent on Express and Express-Session
 */
-var lusca = require('lusca');
+/*var lusca = require('lusca');*/
 
 /*Handling Multipart Form data - "multipart/form-data"
 Build on top of Busyboy. Dependent on Express*/
-var multer = require('multer');
+/*var multer = require('multer');*/
 
-var cookieParser = require('cookie-parser');
+// var cookieParser = require('cookie-parser');
 
 /*Lodash
 JavaScript utility library delivering consistency, 
@@ -39,13 +40,13 @@ var _ = require('lodash');
 
 /*HTTP verbs such as PUT or DELETE in places 
 where the client doesn't support it.*/
-var methodOverride = require('method-override');
+/*var methodOverride = require('method-override');*/
 
 /*Express-Flash is extension of Flash without enabling to redirect Route Requests*/
-var flash = require('express-flash');
+// var flash = require('express-flash');
 
 /** String validators and sanitizers*/
-var expressValidator = require('express-validator');
+/*var expressValidator = require('express-validator');*/
 
 /**Jade Assests as Compiled Javascript Funtions*/
 var connectAssets = require('connect-assets');
@@ -59,10 +60,10 @@ var MongoStore = require('connect-mongo')(session);
 // var flash = require('connect-flash');
 
 /* Winston - Logging*/
-var winston = require('winston');
+/*var winston = require('winston');*/
 
 /* Helper Methods for Node.JS and other Stuff*/
-var helpers = require('view-helpers');
+// var helpers = require('view-helpers');
 
 /*Configuration Control for Production Environment*/
 //var config = require('config');
@@ -83,41 +84,49 @@ var env = process.env.NODE_ENV || 'development';
 
 /*Expose the Modules*/
 
-module.exports = function (app, passport) {
+module.exports = function (app) {
 
 	/*Serve static content in HTTP via GZip Commpressed Format*/
 	app.use(compress());
-
-	/*Static Access on the Public Domain*/
-	// app.use('/',express.static(path.join(__dirname, '../public'), { maxAge: 31557600000 }));
+	
 	app.use(express.static(path.join(__dirname, '../public'), { maxAge: 31557600000 }));
+
 	/** By Defauly, searches for the views 
 	Folder in the root directory*/
 	app.set('views', path.join(__dirname, '../views'));
 
 	/*Express Renders Default in HTML, use View Engine and Pass html as parameter
 	For EJS modules*/
-	app.set('view engine', 'ejs');
-	app.engine('.html', require('ejs').renderFile);
+	app.set('view engine', 'jade');
 
+	/*Static Access on the Public Domain*/
+	// app.use('/',express.static(path.join(__dirname, '../public'), { maxAge: 31557600000 }));
+	// app.use(express.static(path.join(__dirname, '../public'), { maxAge: 31557600000 }));
+	/** By Defauly, searches for the views 
+	Folder in the root directory*/
+	// app.set('views', path.join(__dirname, '../views'));
+	// Express Renders Default in HTML, use View Engine and Pass html as parameter
+	// For EJS modules
+	// app.set('view engine', 'ejs');
+	// app.engine('.html', require('ejs').renderFile);
+/*
 	app.get('/', function(req, res) {
     	res.redirect('/home');
-	});
+	});*/
 
 
-	app.use(app.router);
+	// app.use(app.router);
 
-	
 	app.use(bodyParser.json());
-	app.use(bodyParser.urlencoded({ extended: true }));
+	app.use(bodyParser.urlencoded({extended:true}));
 	// app.use(multer({ dest: path.join(__dirname, 'uploads') }));
 
 	/*Express Validator*/
-	app.use(expressValidator());
+	// app.use(expressValidator());
 
 	/*HTTP Override*/
-	app.use(methodOverride());
-	app.use(cookieParser());
+	// app.use(methodOverride());
+	// app.use(cookieParser());
 
 	/*Session Management*/
 	app.use(session({
@@ -129,7 +138,7 @@ module.exports = function (app, passport) {
 
 	
 	/*Express-Flash*/
-	app.use(flash());
+	// app.use(flash());
 
 	/*Lusca Security Middleware*/
 	/*app.use(lusca({
@@ -166,9 +175,9 @@ module.exports = function (app, passport) {
 
 
   // expose package.json to views
-  app.use(function (req, res, next) {
-    res.locals.pkg = pkg;
-    //res.locals.env = env;
+  	app.use(function (req, res, next) {
+    	res.locals.pkg = pkg;
+    	//res.locals.env = env;
     next();
-  });
+  	});
 };

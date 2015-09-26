@@ -8,10 +8,11 @@ var express = require('express');
 var mongoose = require('mongoose');
 
 //NodeJS Error Handler
-var errorhandler = require('errorhandler');
+// var errorhandler = require('errorhandler');
+var bodyParser = require('body-parser');
 
 /*PassportJS*/
-var passport = require('passport');
+/*var passport = require('passport');*/
 
 /* Production Settings */
 // /var config = require('config');
@@ -20,8 +21,8 @@ var passport = require('passport');
 var secrets = require('./config/secrets');
 
 /* SSL Required files*/
-var fs = require('fs');
-var https = require('https');
+// var fs = require('fs');
+// var https = require('https');
 // var privateKey  = fs.readFileSync('sslcert/private-key.pem', 'utf8');
 // var certificate = fs.readFileSync('sslcert/certificate.pem', 'utf8');
 // var credentials = {key: privateKey, cert: certificate};
@@ -30,15 +31,18 @@ var https = require('https');
 /** Create Express server.*/
 var app = module.exports = express();
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
+
 /*** Express configuration.*/
 app.set('port', process.env.PORT || 3000);
-app.set('httpsport', process.env.PORT || 4433);
+// app.set('httpsport', process.env.PORT || 4433);
 
 // Bootstrap passport config
 // require('./config/passport')(passport);
 
 // Bootstrap application settings
-// require('./config/express')(app, passport);
+require('./config/express')(app);
 
 // Bootstrap routes
 require('./config/routes')(app);
@@ -51,18 +55,18 @@ require('./config/routes')(app);
 /**
  * Error Handler.
  */
-app.use(errorhandler());
-var env = process.env.NODE_ENV || 'Development';
-if (env == 'Development'){
-  app.use(errorhandler({ dumpExceptions : true, showStack : true}));
-};
+// app.use(errorhandler());
+// var env = process.env.NODE_ENV || 'Development';
+// if (env == 'Development'){
+//   // app.use(errorhandler({ dumpExceptions : true, showStack : true}));
+// };
 
-if (env == 'test'){
-  app.use(errorhandler({ dumpExceptions : true, showStack : true}));
-};
+// if (env == 'test'){
+//   // app.use(errorhandler({ dumpExceptions : true, showStack : true}));
+// };
 
 var server = null
-var httpsServer = null
+// var httpsServer = null
 
 server = require('http').createServer(app);
 // httpsServer = https.createServer(app);

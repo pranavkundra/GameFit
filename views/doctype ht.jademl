@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    | &#x9;
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    | &#x9;
+    title  Grabstr Page Not Found
+    | &#x9;
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
+    | &#x9;
+    link(rel='shortcut icon', href='../favicon.ico')
+    | &#x9;
+    style.
+      .containerError{
+      width: 90%;
+      margin: 0 auto;
+      /*position: relative;*/
+      }
+      .inner-containerError{
+      padding-top: 17%;
+      width: 25%;
+      margin: 0 auto;
+      text-align: center;
+      }
+  body
+    .containerError
+      .inner-containerError
+        h1  404! 
+        | &#x9;&#x9;&#x9;
+        h2  Oops Page Not found 
+        | &#x9;&#x9;&#x9;
+        h3
+          | Grabstr is Investigating. 
+          br
+          br
+          | &#x9;&#x9;&#x9;
+          a.btn.btn-primary(href='/login')  Login Again 

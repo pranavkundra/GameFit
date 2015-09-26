@@ -1,8 +1,6 @@
 
 var _ = require('lodash');
 var async = require('async');
-var moment = require('moment');
-var timezone = require('moment-timezone');
 var Power = require('../models/Powers');
 
 function setHeaders(res){
@@ -15,6 +13,7 @@ function setHeaders(res){
 */
 exports.getPowers = function(req,res){
 	// var returnjson = {x:"p", y:"q"};
+	console.log(req.body);
 	Power.find({})
 		 .exec( function (error,result){
 		 	if(error){
@@ -24,8 +23,11 @@ exports.getPowers = function(req,res){
 		 	console.log("Sending a Sample Response");
 		 	res.send(result);
 		 });
+};
 
-	// setHeaders(res);
-	
-	// res.send(returnjson);
+exports.postPowers = function(req,res){
+	console.log("Request" + req.body.stepCounts);
+	var x = req.body.stepCounts;
+	console.log("Posted == " + x)
+	res.send(x);
 };
