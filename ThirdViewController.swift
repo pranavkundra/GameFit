@@ -10,13 +10,13 @@ import UIKit
 
 class ThirdViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var abilityTableView: UITableView!
-    var abilityList = ["Super Speed", "Heavy Arm Lifting", "Strength"]
+    @IBOutlet weak var statTableView: UITableView!
+    var abilityList = ["➢ Wins", "➢ Losses", "➢ Best Score"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        abilityTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "AbilityCell")
+        statTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "AbilityCell")
     }
     
     override func didReceiveMemoryWarning() {
