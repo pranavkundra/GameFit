@@ -11,8 +11,8 @@ var session = require('express-session');
 
 router.post('/hack', function (req,res){
 	console.log('I am here2222');
-	console.log("Request" + req.params.stepCounts);
-	var x = req.params.stepCounts;
+	console.log("Request" + req.body.stepCounts);
+	var x = req.body.stepCounts;
 	// setHeaders(res);
 	console.log("Posted == " + x)
 	res.send(x);
