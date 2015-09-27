@@ -130,6 +130,7 @@ module.exports = function (app) {
 	// app.use(cookieParser());
 
 	/*Session Management*/
+
 	app.use(session({
 	  resave: true,
 	  saveUninitialized: true,
@@ -178,9 +179,9 @@ module.exports = function (app) {
 
 
   // expose package.json to views
-  	app.use(function (req, res, next) {
-    	res.locals.pkg = pkg;
-    	//res.locals.env = env;
-    next();
-  	});
+  	// app.use(function (req, res, next) {
+   //  	res.locals.pkg = pkg;
+   //  	//res.locals.env = env;
+   //  next();
+  	// });
 };

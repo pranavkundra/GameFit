@@ -1,97 +1,100 @@
-/**
-Module Dependencies
-*/
-
+// grab the packages we need
 var express = require('express');
-
-/*MongoDB Node.JS Connector*/
-var mongoose = require('mongoose');
-
-//NodeJS Error Handler
-// var errorhandler = require('errorhandler');
+var app = express();
+var port = process.env.PORT || 8080;
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
 var bodyParser = require('body-parser');
+var Power = require('./models/Powers');
 
-/*PassportJS*/
-/*var passport = require('passport');*/
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({	extended: true })); // support encoded bodies
 
-/* Production Settings */
-// /var config = require('config');
+app.use(session({
+	  resave: true,
+	  saveUninitialized: true,
+	  secret: 'gamefit',
+	  store: new MongoStore({ url: 'mongodb://admin:hackGT1234@ds051543.mongolab.com:51543/gamefit', autoReconnect: true })
+}));
 
-/**API keys and Passport configuration.*/
-var secrets = require('./config/secrets');
+app.get('/api/getPowers', function(req,res){
+	// console.log(req.body);
+	Power.find({})
+		 .exec( function (error,result){
+		 	if(error){
+		 		console.log('Encountered Error');
+		 	}
+		 	setHeaders(res);
+		 	console.log("Sending a Sample Response");
+		 	res.send(result);
+		 });
+});
 
-/* SSL Required files*/
-// var fs = require('fs');
-// var https = require('https');
-// var privateKey  = fs.readFileSync('sslcert/private-key.pem', 'utf8');
-// var certificate = fs.readFileSync('sslcert/certificate.pem', 'utf8');
-// var credentials = {key: privateKey, cert: certificate};
+app.post('/api/postPowers', function(req,res){
+		var stepsCount = req.body.stepsCount;
+		var heartbeat = req.body.heartbeat;
 
+		console.log("Heyy"+stepsCount+heartbeat);
 
-/** Create Express server.*/
-var app = module.exports = express();
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
-
-/*** Express configuration.*/
-app.set('port', process.env.PORT || 3000);
-// app.set('httpsport', process.env.PORT || 4433);
-
-// Bootstrap passport config
-// require('./config/passport')(passport);
-
-// Bootstrap application settings
-require('./config/express')(app);
-
-// Bootstrap routes
-require('./config/routes')(app);
-
-// app.use(function(req, res, next) {
-//   if (/api/i.test(req.path)) req.session.returnTo = req.path;
-//   next();
-// });
-
-/**
- * Error Handler.
- */
-// app.use(errorhandler());
-// var env = process.env.NODE_ENV || 'Development';
-// if (env == 'Development'){
-//   // app.use(errorhandler({ dumpExceptions : true, showStack : true}));
-// };
-
-// if (env == 'test'){
-//   // app.use(errorhandler({ dumpExceptions : true, showStack : true}));
-// };
-
-var server = null
-// var httpsServer = null
-
-server = require('http').createServer(app);
-// httpsServer = https.createServer(app);
-
-pj = require('./package.json');
-
-require('./core/bootstrap').isEnvSane(server,function(err, port){
-  if(err){
-    console.log(err);
-    process.exit(1);
-  }
-  else
-  {
-    console.log("In Else of Bootstrap.coffee");
-    server.listen((port), function(d,s){
-      console.log("GameFir v"+pj.version+" listening on port %d in %s mode", port, app.settings.env);
-      //console.log("Server's UID is now " + process.getuid());
-    });
-
-    // httpsServer.listen((4433), function(){
-    //   console.log("GameFit Server v"+pj.version+" listening on port %d in %s mode",port, app.settings.env);
-    // });
-
-  }
+		res.send(stepsCount + ' ' + heartbeat);
 });
 
 
-module.exports = app;
+// routes will go here
+
+// ====================================
+// URL PARAMETERS =====================
+// ====================================
+// http://localhost:8080/api/users?id=4&token=sadsf4&geo=us
+// app.get('/api/users', function(req, res) {
+//   var user_id = req.param('id');
+//   var token = req.param('token');
+//   var geo = req.param('geo');  
+
+//   res.send(user_id + ' ' + token + ' ' + geo);
+// });
+
+// // http://localhost:8080/api/1
+// app.get('/api/:version', function(req, res) {
+// 	res.send(req.params.version);
+// });
+
+// // parameter middleware that will run before the next routes
+// app.param('name', function(req, res, next, name) {
+
+// 	// check if the user with that name exists
+// 	// do some validations
+// 	// add -dude to the name
+// 	var modified = name + '-dude';
+
+// 	// save name to the request
+// 	req.name = modified;
+
+// 	next();
+// });
+
+// // http://localhost:8080/api/users/chris
+// app.get('/api/users/:name', function(req, res) {
+// 	// the user was found and is available in req.user
+// 	res.send('What is up ' + req.name + '!');
+// });
+
+// // ====================================
+// // POST PARAMETERS ====================
+// // ====================================
+
+// // POST http://localhost:8080/api/users
+// // parameters sent with 
+// app.post('/api/users', function(req, res) {
+// 	var user_id = req.body.id;
+// 	var token = req.body.token;
+// 	var geo = req.body.geo;
+
+// 	console.log("Heyy"+geo+token		);
+
+// 	res.send(user_id + ' ' + token + ' ' + geo);
+// });
+
+// start the server
+app.listen(port);
+console.log('Server started! At http://localhost:' + port);

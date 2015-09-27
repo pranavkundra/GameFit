@@ -9,7 +9,7 @@ var session = require('express-session');
 //API for sending Home users
 // router.get('/powers', userApiController.getPowers);
 
-router.post('/hack', function (req,res){
+router.post('/', function (req,res){
 	console.log('I am here2222');
 	console.log("Request" + req.body.stepCounts);
 	var x = req.body.stepCounts;

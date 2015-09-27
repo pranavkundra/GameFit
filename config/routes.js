@@ -1,7 +1,7 @@
-var express = require("express"),
-    routes = require("../routes/index"),
-    powers = require("../routes/powers");
-var bodyParser = require('body-parser');
+// var express = require("express"),
+//     routes = require("../routes/index"),
+//     powers = require("../routes/powers");
+// var bodyParser = require('body-parser');
 
 // module.exports = function(app) {
 //     app.use(bodyParser.json());
