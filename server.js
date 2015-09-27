@@ -1,7 +1,8 @@
 // grab the packages we need
 var express = require('express');
 var app = express();
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
+
 var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
@@ -10,7 +11,7 @@ var Power = require('./models/Powers');
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({	extended: true })); // support encoded bodies
-
+mongoose.connect('mongodb://admin:hackGT1234@ds051543.mongolab.com:51543/gamefit');
 app.use(session({
 	  resave: true,
 	  saveUninitialized: true,
@@ -20,12 +21,13 @@ app.use(session({
 
 app.get('/api/getPowers', function(req,res){
 	// console.log(req.body);
+  console.log('Entered');
 	Power.find({})
 		 .exec( function (error,result){
 		 	if(error){
 		 		console.log('Encountered Error');
 		 	}
-		 	setHeaders(res);
+		 	// setHeaders(res);
 		 	console.log("Sending a Sample Response");
 		 	res.send(result);
 		 });
