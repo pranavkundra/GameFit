@@ -12,9 +12,12 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
   
     @IBOutlet weak var tableView: UITableView!
     
-    var abilityList = [["Ability1", "Lorem ipsum dolor sit amet, consectetur adipiscing\n elit. Etiam viverra dignissim quam, vitae venenatis urna posuere eu. Donec est dui, tincidunt nec mauris sit amet, dapibus congue felis. Quisque in massa sit amet metus placerat efficitur. Mauris egestas tortor in nisi mattis placerat. Aenean egestas elit ut ligula facilisis bibendum. In ullamcorper venenatis eros, eu mollis enim molestie id. Aliquam non sagittis mauris. Suspendisse sit amet magna a nunc consequat placerat. Morbi euismod placerat justo eget scelerisque. Nullam dictum tincidunt congue. Donec at elit vel lorem ultrices pellentesque ac malesuada arcu. Donec facilisis, felis vel dapibus finibus, dolor justo rhoncus quam, sit amet faucibus metus sapien eu velit. Donec volutpat enim vel turpis congue tincidunt. Nam efficitur quam quis quam malesuada ornare. Sed nec rhoncus orci, eu molestie orci. In hac habitasse platea dictumst."],
-                    ["Ability2", "Description2"],
-                    ["Ability3", "Description3"]]
+    var abilityList = [["Defense+", "Burn more calories for increasing defense."],
+                    ["Critical Surge", "Increases impact of the next attack based on your vitality! (a metric based on heart rate)"],
+                    ["Stun", "Attack opponents and stun them based on the number of steps you've walked."],
+                    ["Tackle", "Attack your opponent directly. Based on calories burnt."],
+                    ["Heal", "Increases health for the next round. Cycle more for improving your healing."],
+                    ["Trip", "Attack your opponent as a percentage of his health, based on the number of steps you've walked."],]
     
     override func viewDidLoad() {
         super.viewDidLoad()

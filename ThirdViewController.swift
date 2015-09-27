@@ -12,7 +12,7 @@ class ThirdViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var statTableView: UITableView!
-    var abilityList = ["➢ Wins", "➢ Losses", "➢ Best Score"]
+    var abilityList = ["➢ Wins = 5", "➢ Losses = 7", "➢ Best Score = 54"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

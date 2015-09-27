@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A7DA4741BB7D0BA008025F7 /* UsernameSearchBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7DA4731BB7D0BA008025F7 /* UsernameSearchBarController.swift */; settings = {ASSET_TAGS = (); }; };
+		8A7DA47D1BB8239F008025F7 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7DA4751BB8239F008025F7 /* HealthManager.swift */; settings = {ASSET_TAGS = (); }; };
+		8A7DA47E1BB8239F008025F7 /* ViewControllerMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7DA4761BB8239F008025F7 /* ViewControllerMain.swift */; settings = {ASSET_TAGS = (); }; };
+		8A7DA47F1BB8239F008025F7 /* ViewControllerActiveEnergyBurned.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7DA4771BB8239F008025F7 /* ViewControllerActiveEnergyBurned.swift */; settings = {ASSET_TAGS = (); }; };
+		8A7DA4801BB8239F008025F7 /* ViewControllerCyclingDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7DA4781BB8239F008025F7 /* ViewControllerCyclingDistance.swift */; settings = {ASSET_TAGS = (); }; };
+		8A7DA4811BB8239F008025F7 /* ViewControllerDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7DA4791BB8239F008025F7 /* ViewControllerDistance.swift */; settings = {ASSET_TAGS = (); }; };
+		8A7DA4821BB8239F008025F7 /* ViewControllerFlightsClimbed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7DA47A1BB8239F008025F7 /* ViewControllerFlightsClimbed.swift */; settings = {ASSET_TAGS = (); }; };
+		8A7DA4831BB8239F008025F7 /* ViewControllerHeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7DA47B1BB8239F008025F7 /* ViewControllerHeartRate.swift */; settings = {ASSET_TAGS = (); }; };
+		8A7DA4841BB8239F008025F7 /* ViewControllerSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7DA47C1BB8239F008025F7 /* ViewControllerSteps.swift */; settings = {ASSET_TAGS = (); }; };
 		8A7E11D31BB65AF600BDB057 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E11D21BB65AF600BDB057 /* AppDelegate.swift */; };
 		8A7E11D51BB65AF600BDB057 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E11D41BB65AF600BDB057 /* FirstViewController.swift */; };
 		8A7E11D71BB65AF600BDB057 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E11D61BB65AF600BDB057 /* SecondViewController.swift */; };
 		8A7E11DA1BB65AF600BDB057 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A7E11D81BB65AF600BDB057 /* Main.storyboard */; };
+		8A7E11DC1BB65AF600BDB057 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A7E11DB1BB65AF600BDB057 /* Assets.xcassets */; };
 		8A7E11DF1BB65AF600BDB057 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A7E11DD1BB65AF600BDB057 /* LaunchScreen.storyboard */; };
 		8A7E11EA1BB65AF600BDB057 /* GameFitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E11E91BB65AF600BDB057 /* GameFitTests.swift */; };
 		8A7E11F51BB65AF600BDB057 /* GameFitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E11F41BB65AF600BDB057 /* GameFitUITests.swift */; };
@@ -39,11 +49,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A7DA4731BB7D0BA008025F7 /* UsernameSearchBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameSearchBarController.swift; sourceTree = "<group>"; };
+		8A7DA4751BB8239F008025F7 /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthManager.swift; path = ../../../../../Downloads/Archive/HealthManager.swift; sourceTree = "<group>"; };
+		8A7DA4761BB8239F008025F7 /* ViewControllerMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerMain.swift; path = ../../../../../Downloads/Archive/ViewControllerMain.swift; sourceTree = "<group>"; };
+		8A7DA4771BB8239F008025F7 /* ViewControllerActiveEnergyBurned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerActiveEnergyBurned.swift; path = ../../../../../Downloads/Archive/ViewControllerActiveEnergyBurned.swift; sourceTree = "<group>"; };
+		8A7DA4781BB8239F008025F7 /* ViewControllerCyclingDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerCyclingDistance.swift; path = ../../../../../Downloads/Archive/ViewControllerCyclingDistance.swift; sourceTree = "<group>"; };
+		8A7DA4791BB8239F008025F7 /* ViewControllerDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerDistance.swift; path = ../../../../../Downloads/Archive/ViewControllerDistance.swift; sourceTree = "<group>"; };
+		8A7DA47A1BB8239F008025F7 /* ViewControllerFlightsClimbed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerFlightsClimbed.swift; path = ../../../../../Downloads/Archive/ViewControllerFlightsClimbed.swift; sourceTree = "<group>"; };
+		8A7DA47B1BB8239F008025F7 /* ViewControllerHeartRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerHeartRate.swift; path = ../../../../../Downloads/Archive/ViewControllerHeartRate.swift; sourceTree = "<group>"; };
+		8A7DA47C1BB8239F008025F7 /* ViewControllerSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerSteps.swift; path = ../../../../../Downloads/Archive/ViewControllerSteps.swift; sourceTree = "<group>"; };
 		8A7E11CF1BB65AF600BDB057 /* GameFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7E11D21BB65AF600BDB057 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A7E11D41BB65AF600BDB057 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		8A7E11D61BB65AF600BDB057 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		8A7E11D91BB65AF600BDB057 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8A7E11DB1BB65AF600BDB057 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A7E11DE1BB65AF600BDB057 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A7E11E01BB65AF600BDB057 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A7E11E51BB65AF600BDB057 /* GameFitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameFitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,9 +133,19 @@
 				8A7E12121BB7201600BDB057 /* ShowAbilityDetailController.swift */,
 				8A7E12041BB65E0400BDB057 /* ThirdViewController.swift */,
 				8A7E11D81BB65AF600BDB057 /* Main.storyboard */,
+				8A7DA4751BB8239F008025F7 /* HealthManager.swift */,
+				8A7DA4761BB8239F008025F7 /* ViewControllerMain.swift */,
+				8A7DA4771BB8239F008025F7 /* ViewControllerActiveEnergyBurned.swift */,
+				8A7DA4781BB8239F008025F7 /* ViewControllerCyclingDistance.swift */,
+				8A7DA4791BB8239F008025F7 /* ViewControllerDistance.swift */,
+				8A7DA47A1BB8239F008025F7 /* ViewControllerFlightsClimbed.swift */,
+				8A7DA47B1BB8239F008025F7 /* ViewControllerHeartRate.swift */,
+				8A7DA47C1BB8239F008025F7 /* ViewControllerSteps.swift */,
+				8A7DA4731BB7D0BA008025F7 /* UsernameSearchBarController.swift */,
 				8ACAC1181BB76F5B0079E1E1 /* BattleViewController.swift */,
 				8ACAC11A1BB788A90079E1E1 /* AttackListController.swift */,
 				8A7E12081BB702F800BDB057 /* CustomTableViewCell.swift */,
+				8A7E11DB1BB65AF600BDB057 /* Assets.xcassets */,
 				8A7E11DD1BB65AF600BDB057 /* LaunchScreen.storyboard */,
 				8A7E11E01BB65AF600BDB057 /* Info.plist */,
 			);
@@ -247,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A7E11DF1BB65AF600BDB057 /* LaunchScreen.storyboard in Resources */,
+				8A7E11DC1BB65AF600BDB057 /* Assets.xcassets in Resources */,
 				8A7E11DA1BB65AF600BDB057 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,10 +307,19 @@
 				8A7E11D71BB65AF600BDB057 /* SecondViewController.swift in Sources */,
 				8A7E12091BB702F800BDB057 /* CustomTableViewCell.swift in Sources */,
 				8A7E11D31BB65AF600BDB057 /* AppDelegate.swift in Sources */,
+				8A7DA47E1BB8239F008025F7 /* ViewControllerMain.swift in Sources */,
+				8A7DA4741BB7D0BA008025F7 /* UsernameSearchBarController.swift in Sources */,
+				8A7DA4801BB8239F008025F7 /* ViewControllerCyclingDistance.swift in Sources */,
+				8A7DA4831BB8239F008025F7 /* ViewControllerHeartRate.swift in Sources */,
+				8A7DA4821BB8239F008025F7 /* ViewControllerFlightsClimbed.swift in Sources */,
+				8A7DA4811BB8239F008025F7 /* ViewControllerDistance.swift in Sources */,
+				8A7DA47F1BB8239F008025F7 /* ViewControllerActiveEnergyBurned.swift in Sources */,
+				8A7DA4841BB8239F008025F7 /* ViewControllerSteps.swift in Sources */,
 				8A7E12051BB65E0400BDB057 /* ThirdViewController.swift in Sources */,
 				8ACAC11B1BB788A90079E1E1 /* AttackListController.swift in Sources */,
 				8A7E12131BB7201600BDB057 /* ShowAbilityDetailController.swift in Sources */,
 				8A7E11D51BB65AF600BDB057 /* FirstViewController.swift in Sources */,
+				8A7DA47D1BB8239F008025F7 /* HealthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

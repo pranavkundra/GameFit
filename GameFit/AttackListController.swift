@@ -11,7 +11,7 @@ import UIKit
 
 class AttackListController: UITableViewController {
 
-    let attackList = [ ["Attack1", 135], ["Attack2", 335], ["Attack3", 325], ["Attack4", 355],]
+    let attackList = [ ["Defense+", 20], ["Critical Surge", 20], ["Stun", 30], ["Tackle", 40], ["Heal", 10], ["Trip%", 15]]
     var chosenAttack = ["Attack", 100]
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

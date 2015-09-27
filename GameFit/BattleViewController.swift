@@ -13,7 +13,7 @@ class BattleViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
-    var battleHistory = ["Player A zapped Player B", "Player B attacked player A with Y", "Player A attacked player B with Y"]
+    var battleHistory = ["Player1 used defense on Player2", "Player2 used tackle on Player1", "Player1 used heal on Player2"]
     var players = ["Player1", "Player2"]
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,8 +33,8 @@ class BattleViewController: UIViewController, UITableViewDataSource, UITableView
             let sourceVC = segue.sourceViewController as! AttackListController
             
             let theAttack = sourceVC.chosenAttack
-                
-            battleHistory.append(players[0] + " " + String(theAttack[0]) + " " + players[1])
+            
+            battleHistory.append(players[0] + " used " + String(theAttack[0]) + " on " + players[1])
             
             let indexPath = NSIndexPath(forRow: battleHistory.count-1, inSection: 0)
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
