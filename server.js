@@ -80,7 +80,7 @@ app.post('/api/postPowers', function(req,res){
 
 		console.log("Heyy"+stepsCount+heartbeat);
 
-		res.send(stepsCount + ' ' + heartbeat);
+		res.send({"Success":"Congratulations"});
 });
 
 
