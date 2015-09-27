@@ -59,11 +59,36 @@ app.post('/api/stepsCount',function(req,res){
    for( var i =0 ; i< stringi.length; i++){
         calories = calories +  parseInt(stringi[i],10);
    }
+  User.update({username: username}, { '$set' : {'stepsCount' : calories}}, function(error,count){
+    if(error){
+        console.log("Error");
+    }else{
+      console.log("The data has been updated");
+      res.send({"Success":"Congratulations"});
+    }
+  });
+});
 
-   // console.log("Calories == " + calories);
+/*Energy Burned*/
+app.post('/api/energyBurned',function(req,res){
+   var username = "thechinmay";
+   // if(req.headers['content-type'] == 'text/plain'){
+   //    console.log("Content Plain Text Detected");
+   //    var xyz = req.body;
+   //    var abc =   JSON.stringify(xyz);
+   //    console.log('String Converted == ' + abc);
+   // }
+   // app.use(bodyParser.text());
+   var stringi =JSON.parse(JSON.stringify(req.body.caloriesBurned));
+   console.log("Stringi == " + stringi.length);
+   console.log("Number1" + parseInt(stringi[1],10));
 
-   // console.log('Stringi == ' + stringi.toString());
-   // console.log('Stringi == ' + JSON.stringify(stringi));
+    var calories=0  ; 
+   // stringi = JSON.parse(stringi);
+
+   for( var i =0 ; i< stringi.length; i++){
+        calories = calories +  parseInt(stringi[i],10);
+   }
   User.update({username: username}, { '$set' : {'caloriesBurned' : calories}}, function(error,count){
     if(error){
         console.log("Error");
@@ -73,6 +98,101 @@ app.post('/api/stepsCount',function(req,res){
     }
   });
 });
+
+/*ClimbDist*/
+app.post('/api/climbingDist',function(req,res){
+   var username = "thechinmay";
+   // if(req.headers['content-type'] == 'text/plain'){
+   //    console.log("Content Plain Text Detected");
+   //    var xyz = req.body;
+   //    var abc =   JSON.stringify(xyz);
+   //    console.log('String Converted == ' + abc);
+   // }
+   // app.use(bodyParser.text());
+   var stringi =JSON.parse(JSON.stringify(req.body.climbingDist));
+   console.log("Stringi == " + stringi.length);
+   console.log("Number1" + parseInt(stringi[1],10));
+
+    var calories=0  ; 
+   // stringi = JSON.parse(stringi);
+
+   for( var i =0 ; i< stringi.length; i++){
+        calories = calories +  parseInt(stringi[i],10);
+   }
+  User.update({username: username}, { '$set' : {'climbingDist' : calories}}, function(error,count){
+    if(error){
+        console.log("Error");
+    }else{
+      console.log("The data has been updated");
+      res.send({"Success":"Congratulations"});
+    }
+  });
+});
+
+
+/*heartrate*/
+app.post('/api/heartRate',function(req,res){
+   var username = "thechinmay";
+   // if(req.headers['content-type'] == 'text/plain'){
+   //    console.log("Content Plain Text Detected");
+   //    var xyz = req.body;
+   //    var abc =   JSON.stringify(xyz);
+   //    console.log('String Converted == ' + abc);
+   // }
+   // app.use(bodyParser.text());
+   var stringi =JSON.parse(JSON.stringify(req.body.heartRate));
+   console.log("Stringi == " + stringi.length);
+   console.log("Number1" + parseInt(stringi[1],10));
+
+    var calories=0  ; 
+   // stringi = JSON.parse(stringi);
+
+   for( var i =0 ; i< stringi.length; i++){
+        calories = calories +  parseInt(stringi[i],10);
+   }
+  User.update({username: username}, { '$set' : {'heartRate' : calories}}, function(error,count){
+    if(error){
+        console.log("Error");
+    }else{
+      console.log("The data has been updated");
+      res.send({"Success":"Congratulations"});
+    }
+  });
+});
+
+/*cyclingDist*/
+app.post('/api/cyclingDist',function(req,res){
+   var username = "thechinmay";
+   // if(req.headers['content-type'] == 'text/plain'){
+   //    console.log("Content Plain Text Detected");
+   //    var xyz = req.body;
+   //    var abc =   JSON.stringify(xyz);
+   //    console.log('String Converted == ' + abc);
+   // }
+   // app.use(bodyParser.text());
+   var stringi =JSON.parse(JSON.stringify(req.body.cyclingDist));
+   console.log("Stringi == " + stringi.length);
+   console.log("Number1" + parseInt(stringi[1],10));
+
+    var calories=0  ; 
+   // stringi = JSON.parse(stringi);
+
+   for( var i =0 ; i< stringi.length; i++){
+        calories = calories +  parseInt(stringi[i],10);
+   }
+  User.update({username: username}, { '$set' : {'cyclingDist' : calories}}, function(error,count){
+    if(error){
+        console.log("Error");
+    }else{
+      console.log("The data has been updated");
+      res.send({"Success":"Congratulations"});
+    }
+  });
+});
+
+
+
+
 
 app.post('/api/postPowers', function(req,res){
 		var stepsCount = req.body.stepsCount;
