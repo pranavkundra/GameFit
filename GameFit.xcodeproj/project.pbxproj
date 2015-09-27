@@ -19,6 +19,7 @@
 		8A7E12091BB702F800BDB057 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E12081BB702F800BDB057 /* CustomTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		8A7E12131BB7201600BDB057 /* ShowAbilityDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E12121BB7201600BDB057 /* ShowAbilityDetailController.swift */; settings = {ASSET_TAGS = (); }; };
 		8ACAC1191BB76F5B0079E1E1 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACAC1181BB76F5B0079E1E1 /* BattleViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8ACAC11B1BB788A90079E1E1 /* AttackListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACAC11A1BB788A90079E1E1 /* AttackListController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		8A7E12081BB702F800BDB057 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		8A7E12121BB7201600BDB057 /* ShowAbilityDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowAbilityDetailController.swift; path = ../ShowAbilityDetailController.swift; sourceTree = "<group>"; };
 		8ACAC1181BB76F5B0079E1E1 /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
+		8ACAC11A1BB788A90079E1E1 /* AttackListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				8A7E12041BB65E0400BDB057 /* ThirdViewController.swift */,
 				8A7E11D81BB65AF600BDB057 /* Main.storyboard */,
 				8ACAC1181BB76F5B0079E1E1 /* BattleViewController.swift */,
+				8ACAC11A1BB788A90079E1E1 /* AttackListController.swift */,
 				8A7E12081BB702F800BDB057 /* CustomTableViewCell.swift */,
 				8A7E11DB1BB65AF600BDB057 /* Assets.xcassets */,
 				8A7E11DD1BB65AF600BDB057 /* LaunchScreen.storyboard */,
@@ -278,6 +281,7 @@
 				8A7E12091BB702F800BDB057 /* CustomTableViewCell.swift in Sources */,
 				8A7E11D31BB65AF600BDB057 /* AppDelegate.swift in Sources */,
 				8A7E12051BB65E0400BDB057 /* ThirdViewController.swift in Sources */,
+				8ACAC11B1BB788A90079E1E1 /* AttackListController.swift in Sources */,
 				8A7E12131BB7201600BDB057 /* ShowAbilityDetailController.swift in Sources */,
 				8A7E11D51BB65AF600BDB057 /* FirstViewController.swift in Sources */,
 			);
