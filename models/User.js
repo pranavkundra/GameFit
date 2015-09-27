@@ -10,6 +10,7 @@ var userSchema = new mongoose.Schema({
   climbingDist: {type: Number},
   heartRate : {type: Number},
   stepsCount: {type: Number},
+  caloriesBurned: {type:Number},
   games:[{type: mongoose.Schema.Types.ObjectId, ref:'game'}],
   friends: [{type: mongoose.Schema.Types.ObjectId, ref:'user'}]
 });

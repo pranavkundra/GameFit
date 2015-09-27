@@ -39,6 +39,41 @@ app.get('/api/getUserDetails/:username', function(req,res){
 		 });
 });
 
+
+app.post('/api/energyBurned',function(req,res){
+   var username = "thechinmay";
+   // if(req.headers['content-type'] == 'text/plain'){
+   //    console.log("Content Plain Text Detected");
+   //    var xyz = req.body;
+   //    var abc =   JSON.stringify(xyz);
+   //    console.log('String Converted == ' + abc);
+   // }
+   // app.use(bodyParser.text());
+   var stringi =JSON.parse(JSON.stringify(req.body.stepsCount));
+   console.log("Stringi == " + stringi.length);
+   console.log("Number1" + parseInt(stringi[1],10));
+
+    var calories=0  ; 
+   // stringi = JSON.parse(stringi);
+
+   for( var i =0 ; i< stringi.length; i++){
+        calories = calories +  parseInt(stringi[i],10);
+   }
+
+   // console.log("Calories == " + calories);
+
+   // console.log('Stringi == ' + stringi.toString());
+   // console.log('Stringi == ' + JSON.stringify(stringi));
+  User.update({username: username}, { '$set' : {'caloriesBurned' : calories}}, function(error,count){
+    if(error){
+        console.log("Error");
+    }else{
+      console.log("The data has been updated");
+      res.send({"Success":"Congratulations"});
+    }
+  });
+});
+
 app.post('/api/postPowers', function(req,res){
 		var stepsCount = req.body.stepsCount;
 		var heartbeat = req.body.heartbeat;
