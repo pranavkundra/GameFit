@@ -26,13 +26,13 @@ exports.getPowers = function(req,res){
 		 });
 };
 
-exports.postPowers = function(req,res){
-	
-	console.log("Request" + req.body.stepCounts);
-	var x = req.body.stepCounts;
-	console.log("Posted == " + x)
-	res.send(x);
-};
+// exports.postPowers = function(req,res){
+// 	console.log('I am here');
+// 	console.log("Request" + req.body.stepCounts);
+// 	var x = req.body.stepCounts;
+// 	console.log("Posted == " + x)
+// 	res.send(x);
+// };
 
 // postPowers = ( function(){
 // 	function postPowers(){}

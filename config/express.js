@@ -5,7 +5,8 @@
 var express = require('express');
 // var fs = require('fs');
 var bodyParser = require('body-parser');
-
+var routes = require("../routes/index"),
+    powers = require("../routes/powers");
 /*Compression Middleware DFlate and Gzip - 
 Serving HTML/CSS/JS {Client Side} Assets*/
 var compress = require('compression');
@@ -23,7 +24,7 @@ var session = require('express-session');
 Build on top of Busyboy. Dependent on Express*/
 /*var multer = require('multer');*/
 
-// var cookieParser = require('cookie-parser');
+var cookieParser = require('cookie-parser');
 
 /*Lodash
 JavaScript utility library delivering consistency, 
@@ -66,7 +67,7 @@ var MongoStore = require('connect-mongo')(session);
 // var helpers = require('view-helpers');
 
 /*Configuration Control for Production Environment*/
-//var config = require('config');
+// var config = require('config');
 
 /*Secrets*/
 var secrets = require('./secrets');
@@ -85,11 +86,11 @@ var env = process.env.NODE_ENV || 'development';
 /*Expose the Modules*/
 
 module.exports = function (app) {
-
+	console.log('In Express COnfig');
 	/*Serve static content in HTTP via GZip Commpressed Format*/
 	app.use(compress());
 	
-	app.use(express.static(path.join(__dirname, '../public'), { maxAge: 31557600000 }));
+	app.use(express.static(path.join(__dirname, 'public')));
 
 	/** By Defauly, searches for the views 
 	Folder in the root directory*/
@@ -146,13 +147,15 @@ module.exports = function (app) {
 	  xframekey:'SAMEORIGIN',
 	  xssProtection: true
 	}));*/
-
+	
+	// app.use('/', routes);
+ //    app.use('/powers/', powers);
 	/* Global user Settings for Local*/
-	app.use(function(req, res, next) {
-	  // console.log("Requested User" + req.user);
-	    res.locals.user = req.user;
-	    next();  
-	});
+	// app.use(function(req, res, next) {
+	//   // console.log("Requested User" + req.user);
+	//     res.locals.user = req.user;
+	//     next();  
+	// });
 
 
 	  // Use winston on production

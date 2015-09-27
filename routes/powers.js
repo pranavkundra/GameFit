@@ -2,14 +2,21 @@ var express = require('express');
 
 var router = express.Router();
 var userApiController = require('../controllers/users');
-
-
+var powerController = require('../controllers/powerController');
+var session = require('express-session');
 // var session = require('express-session');
 
 //API for sending Home users
 // router.get('/powers', userApiController.getPowers);
 
-router.post('/powers', userApiController.postPowers);	
+router.post('/hack', function (req,res){
+	console.log('I am here2222');
+	console.log("Request" + req.params.stepCounts);
+	var x = req.params.stepCounts;
+	// setHeaders(res);
+	console.log("Posted == " + x)
+	res.send(x);
+});	
 	// userApiController.postPowersNow(req.body, function (response) {
 	// 	    console.log("Response == " + response)
 	// 	    res.send(response);
