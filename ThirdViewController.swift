@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ThirdViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var statTableView: UITableView!
     var abilityList = ["➢ Wins", "➢ Losses", "➢ Best Score"]
     
@@ -34,5 +35,40 @@ class ThirdViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return abilityList.count
+    }
+    
+    @IBAction func handleTap(recognizer: UITapGestureRecognizer) {
+        let imagePicker = UIImagePickerController()
+        
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            imagePicker.sourceType = .Camera
+        }
+        else {
+            imagePicker.sourceType = .PhotoLibrary
+        }
+        
+        imagePicker.delegate = self
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+//        profilePic.image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        if let theImage = info[UIImagePickerControllerOriginalImage] {
+                profilePic.image = theImage as? UIImage
+        }
+        
+        dismissViewControllerAnimated(true, completion: {} )
+        
+//        if let indexPath = tableView.indexPathForSelectedRow {
+//            let selectedItem = myManager.items[indexPath.row]
+//            let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
+//            selectedItem.photo = photo
+//            myManager.save()
+//            dismissViewControllerAnimated(true, completion: { () -> Void in
+//                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+//            })
+//        }
     }
 }

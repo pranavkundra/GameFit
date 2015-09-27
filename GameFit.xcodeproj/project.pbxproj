@@ -18,6 +18,7 @@
 		8A7E12051BB65E0400BDB057 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E12041BB65E0400BDB057 /* ThirdViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8A7E12091BB702F800BDB057 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E12081BB702F800BDB057 /* CustomTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		8A7E12131BB7201600BDB057 /* ShowAbilityDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E12121BB7201600BDB057 /* ShowAbilityDetailController.swift */; settings = {ASSET_TAGS = (); }; };
+		8ACAC1191BB76F5B0079E1E1 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACAC1181BB76F5B0079E1E1 /* BattleViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		8A7E12041BB65E0400BDB057 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = ../ThirdViewController.swift; sourceTree = "<group>"; };
 		8A7E12081BB702F800BDB057 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		8A7E12121BB7201600BDB057 /* ShowAbilityDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowAbilityDetailController.swift; path = ../ShowAbilityDetailController.swift; sourceTree = "<group>"; };
+		8ACAC1181BB76F5B0079E1E1 /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				8A7E12121BB7201600BDB057 /* ShowAbilityDetailController.swift */,
 				8A7E12041BB65E0400BDB057 /* ThirdViewController.swift */,
 				8A7E11D81BB65AF600BDB057 /* Main.storyboard */,
+				8ACAC1181BB76F5B0079E1E1 /* BattleViewController.swift */,
 				8A7E12081BB702F800BDB057 /* CustomTableViewCell.swift */,
 				8A7E11DB1BB65AF600BDB057 /* Assets.xcassets */,
 				8A7E11DD1BB65AF600BDB057 /* LaunchScreen.storyboard */,
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ACAC1191BB76F5B0079E1E1 /* BattleViewController.swift in Sources */,
 				8A7E11D71BB65AF600BDB057 /* SecondViewController.swift in Sources */,
 				8A7E12091BB702F800BDB057 /* CustomTableViewCell.swift in Sources */,
 				8A7E11D31BB65AF600BDB057 /* AppDelegate.swift in Sources */,
@@ -420,7 +424,7 @@
 				INFOPLIST_FILE = GameFit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pranavkundra.GameFit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pranavkundra7.GameFit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -432,7 +436,7 @@
 				INFOPLIST_FILE = GameFit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pranavkundra.GameFit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pranavkundra7.GameFit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
