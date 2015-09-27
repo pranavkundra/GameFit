@@ -8,6 +8,7 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var bodyParser = require('body-parser');
 var Power = require('./models/Powers');
+var User = require('./models/User');
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({	extended: true })); // support encoded bodies
@@ -19,17 +20,22 @@ app.use(session({
 	  store: new MongoStore({ url: 'mongodb://admin:hackGT1234@ds051543.mongolab.com:51543/gamefit', autoReconnect: true })
 }));
 
-app.get('/api/getPowers', function(req,res){
+app.get('/api/getUserDetails/:username', function(req,res){
 	// console.log(req.body);
   console.log('Entered');
-	Power.find({})
-		 .exec( function (error,result){
-		 	if(error){
-		 		console.log('Encountered Error');
-		 	}
-		 	// setHeaders(res);
-		 	console.log("Sending a Sample Response");
-		 	res.send(result);
+  var username = req.params.username;
+
+	User.find({username: username})
+		  .exec( function (error,result){
+  		 	if(error){
+  		 		console.log('Encountered Error');
+  		 	}else{
+          console.log("Result == " + result);
+          console.log("Sending a User Response");
+          res.send(result);  
+        }
+  		 	// setHeaders(res);
+  		 	
 		 });
 });
 

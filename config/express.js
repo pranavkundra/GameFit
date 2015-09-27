@@ -130,7 +130,7 @@ module.exports = function (app) {
 	// app.use(cookieParser());
 
 	/*Session Management*/
-
+	
 	app.use(session({
 	  resave: true,
 	  saveUninitialized: true,
