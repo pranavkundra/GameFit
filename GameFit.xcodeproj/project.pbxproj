@@ -11,7 +11,6 @@
 		8A7E11D51BB65AF600BDB057 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E11D41BB65AF600BDB057 /* FirstViewController.swift */; };
 		8A7E11D71BB65AF600BDB057 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E11D61BB65AF600BDB057 /* SecondViewController.swift */; };
 		8A7E11DA1BB65AF600BDB057 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A7E11D81BB65AF600BDB057 /* Main.storyboard */; };
-		8A7E11DC1BB65AF600BDB057 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A7E11DB1BB65AF600BDB057 /* Assets.xcassets */; };
 		8A7E11DF1BB65AF600BDB057 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A7E11DD1BB65AF600BDB057 /* LaunchScreen.storyboard */; };
 		8A7E11EA1BB65AF600BDB057 /* GameFitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E11E91BB65AF600BDB057 /* GameFitTests.swift */; };
 		8A7E11F51BB65AF600BDB057 /* GameFitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E11F41BB65AF600BDB057 /* GameFitUITests.swift */; };
@@ -45,7 +44,6 @@
 		8A7E11D41BB65AF600BDB057 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		8A7E11D61BB65AF600BDB057 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		8A7E11D91BB65AF600BDB057 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8A7E11DB1BB65AF600BDB057 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A7E11DE1BB65AF600BDB057 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A7E11E01BB65AF600BDB057 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A7E11E51BB65AF600BDB057 /* GameFitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameFitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,7 +116,6 @@
 				8ACAC1181BB76F5B0079E1E1 /* BattleViewController.swift */,
 				8ACAC11A1BB788A90079E1E1 /* AttackListController.swift */,
 				8A7E12081BB702F800BDB057 /* CustomTableViewCell.swift */,
-				8A7E11DB1BB65AF600BDB057 /* Assets.xcassets */,
 				8A7E11DD1BB65AF600BDB057 /* LaunchScreen.storyboard */,
 				8A7E11E01BB65AF600BDB057 /* Info.plist */,
 			);
@@ -250,7 +247,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A7E11DF1BB65AF600BDB057 /* LaunchScreen.storyboard in Resources */,
-				8A7E11DC1BB65AF600BDB057 /* Assets.xcassets in Resources */,
 				8A7E11DA1BB65AF600BDB057 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
