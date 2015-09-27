@@ -12,6 +12,7 @@ import UIKit
 class AttackListController: UITableViewController {
 
     let attackList = [ ["Attack1", 135], ["Attack2", 335], ["Attack3", 325], ["Attack4", 355],]
+    var chosenAttack = ["Attack", 100]
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return attackList.count
@@ -34,5 +35,7 @@ class AttackListController: UITableViewController {
         
         cell.accessoryType = .Checkmark
         cell.textLabel?.text=attackList[indexPath.row][0] as! String + " - Damage " + String(attackList[indexPath.row][1] as! Int)
+        chosenAttack[0]=String(attackList[indexPath.row][0])
+        chosenAttack[1]=(attackList[indexPath.row][1]) as! Int
     }
 }
