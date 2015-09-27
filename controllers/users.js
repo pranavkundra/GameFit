@@ -3,6 +3,7 @@ var _ = require('lodash');
 var async = require('async');
 var Power = require('../models/Powers');
 
+
 function setHeaders(res){
 	res.setHeader('Access-Control-Allow-Origin', "*");
 	res.setHeader('Content-Type', "application/json");
@@ -26,8 +27,20 @@ exports.getPowers = function(req,res){
 };
 
 exports.postPowers = function(req,res){
+	
 	console.log("Request" + req.body.stepCounts);
 	var x = req.body.stepCounts;
 	console.log("Posted == " + x)
 	res.send(x);
 };
+
+// postPowers = ( function(){
+// 	function postPowers(){}
+
+// 	postPowers.prototype.postPowersNow = function(incoming, callback){
+// 		console.log("StepCounts==" + incoming.stepCounts);
+// 		callback({"status":"ok"});
+// 	}
+// })(); 
+
+// module.exports = new postPowers();

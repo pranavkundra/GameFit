@@ -7,9 +7,9 @@ var userApiController = require('../controllers/users');
 // var session = require('express-session');
 
 //API for sending Home users
-router.get('/', userApiController.getPowers);
+// router.get('/powers', userApiController.getPowers);
 
-// router.post('/powers', userApiController.postPowers);	
+router.post('/powers', userApiController.postPowers);	
 	// userApiController.postPowersNow(req.body, function (response) {
 	// 	    console.log("Response == " + response)
 	// 	    res.send(response);
