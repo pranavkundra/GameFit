@@ -40,7 +40,7 @@ app.get('/api/getUserDetails/:username', function(req,res){
 });
 
 
-app.post('/api/energyBurned',function(req,res){
+app.post('/api/stepsCount',function(req,res){
    var username = "thechinmay";
    // if(req.headers['content-type'] == 'text/plain'){
    //    console.log("Content Plain Text Detected");
