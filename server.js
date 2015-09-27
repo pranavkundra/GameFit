@@ -9,6 +9,7 @@ var MongoStore = require('connect-mongo')(session);
 var bodyParser = require('body-parser');
 var Power = require('./models/Powers');
 var User = require('./models/User');
+var Game = require('./models/Game');
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({	extended: true })); // support encoded bodies
@@ -160,6 +161,7 @@ app.post('/api/heartRate',function(req,res){
   });
 });
 
+
 /*cyclingDist*/
 app.post('/api/cyclingDist',function(req,res){
    var username = "thechinmay";
@@ -191,7 +193,44 @@ app.post('/api/cyclingDist',function(req,res){
 });
 
 
+/*Game Play*/
 
+app.post('/api/createGame', function(req,res){
+    var initiate = req.body.initiate;
+    var stringi = JSON.parse(JSON.stringify(req.body.username1));
+    var username1 = stringi[0];
+    var username2 = stringi[1];
+    var player1,player2; 
+    User.find({username:username1})
+        .exec(function(error,result){
+            player1 = result._id ;
+            User.find({username:username2})
+                .exec(function(err,result){
+                  player2 = result._id;
+                });
+        }); 
+
+
+    var game = new Game({
+        initiate: initiate,
+        turn: "player1",
+        player1: player1,
+        player2: player2,
+        player1HealthPoints: 100,
+        player1HealthPoints: 100,
+        log:["Player 1 attacked Player 2 with 6 hours of Sleep"],
+        status: "Active"
+    });
+    
+    game.save(function(err,result){
+      if(err){
+        console.log("Error");
+      }else{
+        console.log("Updated");
+        res.send({"Success" : "Congratulations"});
+      }
+    });
+});
 
 
 app.post('/api/postPowers', function(req,res){
